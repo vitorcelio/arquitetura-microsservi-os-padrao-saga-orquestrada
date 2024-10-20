@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum ETopics {
 
     START_SAGA("start-saga"),
-    BASE_ORCHESTRATOR("base-orchestrator"),
+    BASE_ORCHESTRATOR("orchestrator"),
 
     FINISH_SUCCESS("finish-success"),
     FINISH_FAIL("finish-fail"),
@@ -19,11 +19,11 @@ public enum ETopics {
     PAYMENT_SUCCESS("payment-success"),
     PAYMENT_FAIL("payment-fail"),
 
-    INVENTORY_SUCCESS("inventory-fail"),
+    INVENTORY_SUCCESS("inventory-success"),
     INVENTORY_FAIL("inventory-fail"),
 
-    NOTIFY_ENDING("notify-ending"),;
+    NOTIFY_ENDING("notify-ending");
 
-    private String topic;
+    private final String topic;
 
 }
