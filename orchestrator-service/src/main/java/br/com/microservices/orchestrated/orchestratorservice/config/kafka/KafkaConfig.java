@@ -16,7 +16,7 @@ import org.springframework.kafka.core.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static br.com.microservices.orchestrated.orchestratorservice.ETopics.*;
+import static br.com.microservices.orchestrated.orchestratorservice.core.enums.ETopics.*;
 
 @EnableKafka
 @Configuration
