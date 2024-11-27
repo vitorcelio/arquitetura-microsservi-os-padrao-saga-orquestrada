@@ -1,6 +1,6 @@
-package br.com.microservices.orchestrated.orderservice.core.utils;
+package br.com.microservices.orchestrated.inventoryservice.core.utils;
 
-import br.com.microservices.orchestrated.orderservice.core.document.Event;
+import br.com.microservices.orchestrated.inventoryservice.core.dto.EventDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -19,9 +19,9 @@ public class JsonUtil {
         }
     }
 
-    public Event toEvent(String object) {
+    public EventDTO toEvent(String object) {
         try {
-            return objectMapper.readValue(object, Event.class);
+            return objectMapper.readValue(object, EventDTO.class);
         } catch (Exception e) {
             return null;
         }

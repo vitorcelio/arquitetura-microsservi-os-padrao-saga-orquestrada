@@ -7,7 +7,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.util.ObjectUtils.isEmpty;
 
 @Data
 @AllArgsConstructor
@@ -22,5 +25,13 @@ public class EventDTO {
     private EEventSource source;
     private ESagaStatus status;
     private List<HistoryDTO> eventHistory;
+
+    public void addToHistory(HistoryDTO historyDTO) {
+        if(isEmpty(this.eventHistory)) {
+            this.eventHistory = new ArrayList<>();
+        }
+
+        eventHistory.add(historyDTO);
+    }
 
 }

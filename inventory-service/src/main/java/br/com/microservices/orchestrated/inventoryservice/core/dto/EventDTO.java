@@ -1,13 +1,15 @@
-package br.com.microservices.orchestrated.orchestratorservice.core.dto;
+package br.com.microservices.orchestrated.inventoryservice.core.dto;
 
-import br.com.microservices.orchestrated.orchestratorservice.core.enums.EEventSource;
-import br.com.microservices.orchestrated.orchestratorservice.core.enums.ESagaStatus;
+import br.com.microservices.orchestrated.inventoryservice.core.enums.ESagaStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.util.ObjectUtils.isEmpty;
 
 @Data
 @AllArgsConstructor
@@ -19,8 +21,16 @@ public class EventDTO {
     private String transactionId;
     private String orderId;
     private OrderDTO payload;
-    private EEventSource source;
+    private String source;
     private ESagaStatus status;
     private List<HistoryDTO> eventHistory;
+
+    public void addToHistory(HistoryDTO historyDTO) {
+        if(isEmpty(this.eventHistory)) {
+            this.eventHistory = new ArrayList<>();
+        }
+
+        eventHistory.add(historyDTO);
+    }
 
 }

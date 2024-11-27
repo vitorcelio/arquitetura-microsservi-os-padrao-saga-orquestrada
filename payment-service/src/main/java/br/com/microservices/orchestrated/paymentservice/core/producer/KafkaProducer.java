@@ -1,4 +1,4 @@
-package br.com.microservices.orchestrated.productvalidationservice.core.producer;
+package br.com.microservices.orchestrated.paymentservice.core.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
